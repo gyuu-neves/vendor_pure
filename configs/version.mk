@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PURE_VERSION := $(PLATFORM_VERSION)-$(shell date +%Y%m%d)-MOD
+PURE_VERSION := $(PLATFORM_VERSION)-$(shell date +%Y%m%d)-CAF
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.pure.version=$(PURE_VERSION)

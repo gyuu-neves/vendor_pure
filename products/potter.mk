@@ -16,11 +16,11 @@
 include vendor/pure/configs/pure_phone.mk
 
 # Inherit AOSP device configuration for osprey
-$(call inherit-product, device/motorola/surnia/aosp_surnia.mk)
+$(call inherit-product, device/motorola/potter/aosp_potter.mk)
 
 # Set those variables here to overwrite the inherited values.
-PRODUCT_DEVICE := surnia
-PRODUCT_NAME := surnia
+PRODUCT_DEVICE := potter
+PRODUCT_NAME := potter
 PRODUCT_BRAND := Motorola
 PRODUCT_MANUFACTURER := Motorola
-PRODUCT_RELEASE_NAME := surnia
+PRODUCT_RELEASE_NAME := potter
