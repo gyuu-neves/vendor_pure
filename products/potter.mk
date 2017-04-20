@@ -15,7 +15,7 @@
 # Include pure telephony configuration
 include vendor/pure/configs/pure_phone.mk
 
-# Inherit AOSP device configuration for osprey
+# Inherit AOSP device configuration for potter
 $(call inherit-product, device/motorola/potter/aosp_potter.mk)
 
 # Set those variables here to overwrite the inherited values.

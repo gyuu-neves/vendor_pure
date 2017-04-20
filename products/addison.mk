@@ -15,7 +15,7 @@
 # Include pure telephony configuration
 include vendor/pure/configs/pure_phone.mk
 
-# Inherit AOSP device configuration for lux
+# Inherit AOSP device configuration for addison
 $(call inherit-product, device/motorola/addison/aosp_addison.mk)
 
 # Set those variables here to overwrite the inherited values.
