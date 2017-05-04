@@ -44,10 +44,6 @@ PRODUCT_PACKAGES += \
     ThemeInterfacer \
     OmniStyle \
     Turbo \
-    DeskClock \
-    messaging \
-    SoundRecorder \
-    Calendar \
     Gallery2
 
 # More Derps

@@ -12,8 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PURE_VERSION := $(PLATFORM_VERSION)-$(shell date +%Y%m%d)-UNOFFICIAL
+# Include pure telephony configuration
+include vendor/pure/configs/pure_phone.mk
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.pure.version=$(PURE_VERSION)
+# Inherit AOSP device configuration for osprey
+$(call inherit-product, device/motorola/surnia/aosp_surnia.mk)
 
+# Set those variables here to overwrite the inherited values.
+PRODUCT_DEVICE := surnia
+PRODUCT_NAME := surnia
+PRODUCT_BRAND := Motorola
+PRODUCT_MANUFACTURER := Motorola
+PRODUCT_RELEASE_NAME := surnia

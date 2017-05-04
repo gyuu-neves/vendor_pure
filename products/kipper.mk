@@ -12,8 +12,26 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PURE_VERSION := $(PLATFORM_VERSION)-$(shell date +%Y%m%d)-UNOFFICIAL
+IS_ARM64 := true
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.pure.version=$(PURE_VERSION)
+$(call inherit-product, device/wileyfox/kipper/aosp_kipper.mk)
 
+# Include pure telephony configuration
+include vendor/pure/configs/pure_phone.mk
+
+# Must define platform variant before including any common things
+TARGET_BOARD_PLATFORM_VARIANT := msm8939
+
+PRODUCT_NAME := kipper
+BOARD_VENDOR := wileyfox
+PRODUCT_DEVICE := kipper
+
+PRODUCT_GMS_CLIENTID_BASE := android-wileyfox
+
+PRODUCT_MANUFACTURER := Wileyfox
+PRODUCT_MODEL := Wileyfox Storm
+
+PRODUCT_BRAND := Wileyfox
+TARGET_VENDOR := wileyfox
+TARGET_VENDOR_PRODUCT_NAME := Storm
+TARGET_VENDOR_DEVICE_NAME := kipper
