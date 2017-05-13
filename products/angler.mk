@@ -12,13 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#PureNexus versioning
-ifndef PURE_BUILD_TYPE
-    PURE_BUILD_TYPE := UNOFFICIAL
-endif
+# Include pure telephony configuration
+include vendor/pure/configs/pure_phone.mk
 
-PURE_VERSION := $(PLATFORM_VERSION)-$(shell date +%Y%m%d)-$(PURE_BUILD_TYPE)
+# Inherit AOSP device configuration for angler
+$(call inherit-product, device/huawei/angler/aosp_angler.mk)
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.pure.version=$(PURE_VERSION)
+# Override AOSP build properties
+PRODUCT_NAME := angler
+PRODUCT_BRAND := google
+PRODUCT_DEVICE := angler
+PRODUCT_MODEL := Nexus 6P
+PRODUCT_MANUFACTURER := Huawei
 
+# Device Fingerprint
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME=angler \
+    BUILD_FINGERPRINT=google/angler/angler:7.1.2/N2G47O/3852959:user/release-keys \
+    PRIVATE_BUILD_DESC="angler-user 7.1.2 N2G47O 3852959 release-keys"

@@ -16,18 +16,13 @@
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/pure/overlay/common
 
-ifndef IS_ARM64
-IS_ARM64 := false
-endif
-
-ifeq ($(IS_ARM64),true)
-TARGET_ARCH := arm64
-else
-TARGET_ARCH := arm
-endif
-
 # Inherit prebuilt apps
 $(call inherit-product-if-exists, vendor/gapps/prebuilt.mk)
+
+# Use signing keys for only official builds
+ifeq ($(PURE_BUILD_TYPE),OFFICIAL)
+    PRODUCT_DEFAULT_DEV_CERTIFICATE := ../.keys/releasekey
+endif
 
 # Main Required Packages
 PRODUCT_PACKAGES += \
@@ -43,20 +38,10 @@ PRODUCT_PACKAGES += \
     Busybox \
     ThemeInterfacer \
     OmniStyle \
-    Turbo \
-    Gallery2
+    Turbo
 
-# More Derps
+ifneq ($(TARGET_NO_DSPMANAGER), true)
 PRODUCT_PACKAGES += \
-    e2fsck \
-    mke2fs \
-    tune2fs \
-    powertop \
-    libbthost_if
-
-# DU Utils Library
-PRODUCT_PACKAGES += \
-    org.dirtyunicorns.utils
-
-PRODUCT_BOOT_JARS += \
-    org.dirtyunicorns.utils
+    libcyanogen-dsp \
+    audio_effects.conf
+endif

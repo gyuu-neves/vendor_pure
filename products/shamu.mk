@@ -12,13 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#PureNexus versioning
-ifndef PURE_BUILD_TYPE
-    PURE_BUILD_TYPE := UNOFFICIAL
-endif
+# Include pure telephony configuration
+include vendor/pure/configs/pure_phone.mk
 
-PURE_VERSION := $(PLATFORM_VERSION)-$(shell date +%Y%m%d)-$(PURE_BUILD_TYPE)
+# Inherit AOSP device configuration for shamu.
+$(call inherit-product, device/moto/shamu/aosp_shamu.mk)
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.pure.version=$(PURE_VERSION)
+# Override AOSP build properties
+PRODUCT_NAME := shamu
+PRODUCT_BRAND := google
+PRODUCT_DEVICE := shamu
+PRODUCT_MODEL := Nexus 6
+PRODUCT_MANUFACTURER := motorola
 
+# Device Fingerprint
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME=shamu \
+    BUILD_FINGERPRINT=google/shamu/shamu:7.1.1/N6F27C/3853306:user/release-keys \
+    PRIVATE_BUILD_DESC="shamu-user 7.1.1 N6F27C 3853306 release-keys"

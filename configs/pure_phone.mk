@@ -17,7 +17,6 @@ include vendor/pure/configs/bootanimation.mk
 include vendor/pure/configs/pure_main.mk
 include vendor/pure/configs/system_additions.mk
 include vendor/pure/configs/version.mk
-include vendor/pure/configs/telephony.mk
 
 # Telephony packages
 PRODUCT_PACKAGES += \

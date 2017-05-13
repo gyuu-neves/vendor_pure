@@ -29,7 +29,3 @@ PRODUCT_COPY_FILES += \
 # Security Enhanced Linux
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
-
-# PureNexus OTA
-PRODUCT_PACKAGES += \
-    PureOTA

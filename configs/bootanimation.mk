@@ -13,49 +13,27 @@
 # limitations under the License.
 
 # Add Stock Lollipop bootanimation based on device
-ifneq ($(filter kenzo addison athene potter,$(TARGET_PRODUCT)),)
+ifneq ($(filter angler,$(TARGET_PRODUCT)),)
+    PRODUCT_COPY_FILES += \
+        vendor/pure/prebuilt/bootanimation/1440.zip:system/media/bootanimation.zip
+endif
+ifneq ($(filter bullhead,$(TARGET_PRODUCT)),)
     PRODUCT_COPY_FILES += \
         vendor/pure/prebuilt/bootanimation/1080.zip:system/media/bootanimation.zip
 endif
-ifneq ($(filter osprey,$(TARGET_PRODUCT)),)
+ifneq ($(filter dragon,$(TARGET_PRODUCT)),)
     PRODUCT_COPY_FILES += \
-        vendor/pure/prebuilt/bootanimation/720.zip:system/media/bootanimation.zip
+        vendor/pure/prebuilt/bootanimation/1440.zip:system/media/bootanimation.zip
 endif
-
-ifneq ($(filter A6020,$(TARGET_PRODUCT)),)
+ifneq ($(filter marlin,$(TARGET_PRODUCT)),)
+    PRODUCT_COPY_FILES += \
+        vendor/pure/prebuilt/bootanimation/1440.zip:system/media/bootanimation.zip
+endif
+ifneq ($(filter sailfish,$(TARGET_PRODUCT)),)
     PRODUCT_COPY_FILES += \
         vendor/pure/prebuilt/bootanimation/1080.zip:system/media/bootanimation.zip
 endif
-
-ifneq ($(filter surnia,$(TARGET_PRODUCT)),)
+ifneq ($(filter shamu,$(TARGET_PRODUCT)),)
     PRODUCT_COPY_FILES += \
-        vendor/pure/prebuilt/bootanimation/720.zip:system/media/bootanimation.zip
-endif
-ifneq ($(filter lux,$(TARGET_PRODUCT)),)
-    PRODUCT_COPY_FILES += \
-        vendor/pure/prebuilt/bootanimation/1080.zip:system/media/bootanimation.zip
-endif
-ifneq ($(filter victara,$(TARGET_PRODUCT)),)
-    PRODUCT_COPY_FILES += \
-        vendor/pure/prebuilt/bootanimation/1080.zip:system/media/bootanimation.zip
-endif
-ifneq ($(filter condor,$(TARGET_PRODUCT)),)
-    PRODUCT_COPY_FILES += \
-        vendor/pure/prebuilt/bootanimation/720.zip:system/media/bootanimation.zip
-endif
-ifneq ($(filter hydrogen,$(TARGET_PRODUCT)),)
-    PRODUCT_COPY_FILES += \
-        vendor/pure/prebuilt/bootanimation/1080.zip:system/media/bootanimation.zip
-endif
-ifneq ($(filter kipper,$(TARGET_PRODUCT)),)
-    PRODUCT_COPY_FILES += \
-        vendor/pure/prebuilt/bootanimation/1080.zip:system/media/bootanimation.zip
-endif
-ifneq ($(filter oneplus3,$(TARGET_PRODUCT)),)
-    PRODUCT_COPY_FILES += \
-        vendor/pure/prebuilt/bootanimation/1080.zip:system/media/bootanimation.zip
-endif
-ifneq ($(filter otus,$(TARGET_PRODUCT)),)
-    PRODUCT_COPY_FILES += \
-        vendor/pure/prebuilt/bootanimation/720.zip:system/media/bootanimation.zip
+        vendor/pure/prebuilt/bootanimation/1440.zip:system/media/bootanimation.zip
 endif
